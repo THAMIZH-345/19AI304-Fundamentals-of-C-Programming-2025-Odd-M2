@@ -56,7 +56,48 @@
 ### Step 11:
   Stop
 # Program:
+```asm
+#include <stdio.h>
+
+int main() {
+float math, science, english, average;
+
+printf("Enter Math marks: ");
+scanf("%f", &math);
+
+printf("Enter Science marks: ");
+scanf("%f", &science);
+
+printf("Enter English marks: ");
+scanf("%f", &english);
+
+average = (math + science + english) / 3.0f;
+
+printf("Average Marks: %.2f\n", average);
+
+if (average >= 90.0f) {
+    printf("Grade: A\n");
+} else {
+    if (average >= 75.0f) {
+        printf("Grade: B\n");
+    } else {
+        if (average >= 50.0f) {
+            printf("Grade: C\n");
+        } else {
+            printf("Grade: F\n");
+        }
+    }
+}
+
+return 0;
+}
+```
+
 # Output:
+<img width="372" height="193" alt="517720852-d276e863-0f18-4e6e-b10a-2f58afa1b3c1" src="https://github.com/user-attachments/assets/06a33143-0293-4f43-8d50-6e7d1d37a876" />
+<img width="384" height="149" alt="517720878-ad3f0667-e965-4921-8dbf-f6efad48c2f1" src="https://github.com/user-attachments/assets/ac28c9ac-ec74-4dea-8cf0-d367f9850e99" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -88,7 +129,22 @@ Thus, the program was implemented and executed successfully, and the required ou
   Stop
 
 # Program:
+```asm
+#include <stdio.h>
+
+int main() {
+int num = 15;
+
+for (int i = 1; i <= 10; i++) {
+    printf("%d x %d = %d\n", num, i, num * i);
+}
+
+return 0;
+}
+```
 # Output:
+<img width="377" height="348" alt="517720920-996643d1-c592-4c1e-9127-f58d9721868d" src="https://github.com/user-attachments/assets/fdf9ff63-7dd9-4afb-905d-c3131494c421" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -131,7 +187,39 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 7:   
   Stop
 # Program:
+```asm
+#include <stdio.h>
+
+int main() {
+int n, i, flag = 0;
+
+printf("Enter a number: ");
+scanf("%d", &n);
+
+if (n <= 1) {
+    printf("Not a prime number");
+    return 0;
+}
+
+for (i = 2; i <= n/2; i++) {
+    if (n % i == 0) {
+        flag = 1;
+        break;
+    }
+}
+
+if (flag == 0)
+    printf("Prime number");
+else
+    printf("Not a prime number");
+
+return 0;
+}
+```
 # Output:
+<img width="494" height="118" alt="517720983-583bcf5e-06e9-4a0f-88b4-e6860144a02a" src="https://github.com/user-attachments/assets/7ca3d4ed-7d8e-4592-8fe1-89157b67e931" />
+<img width="287" height="58" alt="517720994-ac4822c8-b357-4396-a593-efcf022e69cc" src="https://github.com/user-attachments/assets/c6be01ba-7494-45fd-af5c-bfc7dffbf3a4" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -140,7 +228,7 @@ Thus, the program was implemented and executed successfully, and the required ou
 # IAPR-2- Module 2 - FoC
 # Ex.No:9
   Generate the C code to display the pattern below.  
- ``` 
+ ``` asm
  12345  
  2   4  
  3   3  
@@ -179,7 +267,36 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
+```asm
+#include <stdio.h>
+
+int main() {
+int i, j;
+
+for(i = 1; i <= 5; i++) {
+    for(j = 1; j <= 5; j++) {
+        if(i == 1)
+            printf("%d", j);
+        else if(i == 5)
+            printf("%d", 6 - j);
+        else {
+            if(j == 1)
+                printf("%d", i);
+            else if(j == 5)
+                printf("%d", 6 - i);
+            else
+                printf(" ");
+        }
+    }
+    printf("\n");
+}
+
+return 0;
+}
+```
 # Output:
+<img width="142" height="158" alt="517721056-12fb2bde-81f7-4a66-a104-a4feb4bdc10a" src="https://github.com/user-attachments/assets/97889b40-6a50-470f-b7fd-6e82294f4a32" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -205,6 +322,7 @@ Thus, the program was implemented and executed successfully, and the required ou
  
  1  2  3  4  5  6  7  0  7  6  5  4  3  2  1
 
+# Date: 
 # Aim: 
   To formulate a C program to print a symmetric numeric pattern in which each row contains an increasing sequence of numbers from the row value up to 7, followed by 0 in the center, and then a decreasing sequence of numbers back to the row value.
 # Algorithm:
@@ -232,6 +350,34 @@ Thus, the program was implemented and executed successfully, and the required ou
   Decrease i by 1 and go back to Step 6.
 ### Step 8:
   Stop
+## Program:
+```asm
+#include <stdio.h>
+
+int main() {
+    int i, j;
+
+    printf("0\n");
+
+    for (i = 7; i >= 1; i--) {
+
+        for (j = i; j <= 7; j++)
+            printf("%d ", j);
+
+        printf("0 ");
+
+        for (j = 7; j >= i; j--)
+            printf("%d ", j);
+
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+## Output:
+<img width="685" height="344" alt="516093099-2004cb8b-7336-491d-9750-ec760e35ffcf" src="https://github.com/user-attachments/assets/838777bc-3a11-4e9a-8bab-29960ba9cd5e" />
+
 # Result:
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
